@@ -18,4 +18,6 @@ ln -s /srv/www/uploads/sinkjuice/$site/uploads/ /var/www/html/$site/wp-content/u
 #cp -f /startup/footer.php.$site /var/www/html/$site/wp-content/themes/AandP-Child/footer.php 
 /startup/genvhost.sh $site
 /startup/make-wp-configs $site
+cat /startup/htaccess.default > /var/www/html/$site/.htaccess
+
 echo "scripts/make_softlinks.sh just ran on `curl -s http://169.254.169.254/latest/meta-data/public-ipv4` ($site)." >> /tmp/startup.log
